@@ -23,7 +23,7 @@ docker run -d --name my-ftp \
 -v /path/to/volume/data:/home/vsftpd \
 my-ftp
 </code>
-  
+
 ## Add A User
 <code>
 docker exec -ti my-ftp /bin/bash
@@ -50,4 +50,9 @@ delftpuser.sh
 docker exec -ti my-ftp /bin/bash
 
 delftpdata.sh
+</code>
+  
+## Connect to FTP Service
+<code>
+ftp host-running-container 8021
 </code>
