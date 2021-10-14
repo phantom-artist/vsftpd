@@ -37,8 +37,10 @@ then
   cp -p $DB_DIR/virtual_users.txt $DB_DIR/virtual_users.bk
   # Write the master list, minus the username + old password line to .mod file
   cat $DB_DIR/virtual_users.txt | sed "/$USERNAME/,+1 d" > $DB_DIR/virtual_users.mod
+  chmod u=rw $DB_DIR/virtual_users.txt
   # Append the username + new password to the end of the .mod file
   echo -e "${USERNAME}\n${ENCRYPTED_PASSWORD}" >> $DB_DIR/virtual_users.mod
+  chmod u=r $DB_DIR/virtual_users.txt
   # Overwrite the master .txt file file with the .mod file
   cp $DB_DIR/virtual_users.mod $DB_DIR/virtual_users.txt
   # Delete the .mod file
