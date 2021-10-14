@@ -1,6 +1,6 @@
 FROM centos:7
 
-LABEL maintainer="Phantom Artist"
+LABEL maintainer="phantom-artist"
 
 ARG USER_ID=14
 ARG GROUP_ID=50
