@@ -40,14 +40,14 @@ docker exec -ti my-ftp /bin/bash
 modftpuser.sh
 </code>
   
-## Delete A Virtual User Account (not the data)
+## Delete A User Account (not the data)
 <code>
 docker exec -ti my-ftp /bin/bash
 
 delftpuser.sh
 </code>
 
-## Delete A Virtual User's Data (can only be run after delftpuser.sh)
+## Delete A User's Data (can only be run after delftpuser.sh)
 <code>
 docker exec -ti my-ftp /bin/bash
 
