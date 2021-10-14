@@ -34,7 +34,11 @@ echo -e "${USERNAME}\n${ENCRYPTED_PASSWORD}" > $DB_DIR/add_user.txt
 # Delete the file so there is no permanent record of the generated password in plain-text
 rm -f $DB_DIR/add_user.txt
 # Add the user to the virtual_users permanent file (used for recreating the db)
+if [ -f "$DB_DIR/virtual_users.txt" ]; then
+  chmod u=rw $DB_DIR/virtual_users.txt
+fi
 echo -e "${USERNAME}\n${ENCRYPTED_PASSWORD}" >> $DB_DIR/virtual_users.txt
+chmod u=r $DB_DIR/virtual_users.txt
 echo "Created user $USERNAME"
 rm -f $LOCK_FILE
 
